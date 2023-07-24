@@ -5,15 +5,13 @@ This repository contains some of the most interesting labs for CPS & IoT securit
 ## ICS - Anomaly Detection
 
 In this case, we use an autoencoder for anomaly detection. The intuition is the following: if we train
-our autoencoder on normal data, the reconstruction error on malicious data would be
+our autoencoder on normal data ([HAI](https://github.com/icsdataset/hai)), the reconstruction error on malicious data would be
 higher with respect to normal data. Therefore, in the code, we will train our
 autoencoder in one of the training datasets, which is composed of only benign
 samples. Then, we extract the standard deviation of the loss as a threshold to
 discriminate between attacks and normal samples. Since we will use only benign data
 during training, this process is usually called One Class Classification. No big optimization
 has been done in the code.
-
-Dataset: [HAI](https://github.com/icsdataset/hai).
 
 ## Modbus Hacking
 
